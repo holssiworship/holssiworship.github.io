@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>holssi 워십팀 소개</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* 컬러 팔레트 */
+        :root {
+            --primary-color: #6366f1;  /* Tailwind의 indigo-500 */
+            --primary-dark: #4338ca; /* Tailwind의 indigo-700 */
+            --secondary-color: #f5f5f5;  /* Tailwind의 gray-100 */
+            --text-color: #374151;    /* Tailwind의 gray-800 */
+            --accent-color: #ffffff;
+        }
+        .bg-primary {
+            background-color: var(--primary-color);
+        }
+        .text-primary {
+            color: var(--primary-color);
+        }
+        .bg-secondary {
+            background-color: var(--secondary-color);
+        }
+        .text-secondary {
+            color: var(--secondary-color);
+        }
+        .text-default {
+            color: var(--text-color);
+        }
+        .bg-accent{
+            background-color: var(--accent-color);
+        }
+
+        .hover\:bg-primary:hover {
+            background-color: var(--primary-dark);
+        }
+    </style>
+    <script type="text/javascript">
+        (function() {
+            // EmailJS 초기화 - Public Key 반영 완료
+            emailjs.init("yxBAxcfLA_8P2COm4");
+        })();
+    </script>
+</head>
+<body class="bg-secondary">
+    <header class="bg-accent shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-default">holssi worship</h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="text-default hover:text-primary transition duration-300">홈</a></li>
+                    <li><a href="#about" class="text-default hover:text-primary transition duration-300">소개</a></li>
+                    <li><a href="#gallery" class="text-default hover:text-primary transition duration-300">갤러리</a></li>
+                    <li><a href="#ministries" class="text-default hover:text-primary transition duration-300">사역</a></li>
+                    <li><a href="#contact" class="text-default hover:text-primary transition duration-300">문의</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-default focus:outline-none" aria-label="메뉴 열기">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-white w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="mobile-menu-close-btn" class="text-gray-700 focus:outline-none" aria-label="메뉴 닫기">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block">
+                <ul class="space-y-4">
+                    <li><a href="#home" class="block text-lg text-default hover:text-primary transition duration-300">홈</a></li>
+                    <li><a href="#about" class="block text-lg text-default hover:text-primary transition duration-300">소개</a></li>
+                    <li><a href="#gallery" class="block text-lg text-default hover:text-primary transition duration-300">갤러리</a></li>
+                    <li><a href="#ministries" class="block text-lg text-default hover:text-primary transition duration-300">사역</a></li>
+                    <li><a href="#contact" class="block text-lg text-default hover:text-primary transition duration-300">문의</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <section id="home" class="py-24 md:py-32 bg-secondary relative" style="background-image: url('images/banner.png'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    <span class="text-primary">holssi</span> 워십
+                </h2>
+                <p class="text-gray-200 text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+                    "Here and There" - 우리가 함께 모이는 이곳에서도, 우리가 흩어져 나아갈 그곳에서도
+                </p>
+                <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
+                    <a href="#about" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-full transition duration-300 text-lg btn-glow">팀 소개</a>
+                    <a href="#ministries" class="bg-transparent hover:bg-white/20 text-white border-2 border-white font-semibold py-3 px-8 rounded-full transition duration-300 text-lg btn-glow">사역 소개</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-default text-center mb-8">소개</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold text-default mb-4">holssi 워십팀</h3>
+                        <p class="text-default mb-6">
+                            "Here and There"<br><br>
+                            우리가 모여 예배하는 이곳에서도, <br>
+                            우리가 흩어져 나아갈 그곳에서도<br>
+                            우리를 통해 일하실 하나님을 기대합니다.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="images/banner.png" alt="holssi 워십팀 이미지" class="rounded-lg shadow-md w-full h-auto">
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <h3 class="text-xl font-semibold text-default mb-6 text-center">팀원 소개</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-accent rounded-lg p-6 shadow-lg text-center transform transition duration-300 hover:scale-105">
+                            <img src="https://placehold.co/180x180/6366F1/FFFFFF?text=H" alt="김예배" class="rounded-full mx-auto mb-4 border-4 border-primary">
+                            <p class="text-default font-bold text-lg mb-1">김예배</p>
+                            <p class="text-primary font-medium mb-3">리더 & 보컬</p>
+                            <p class="text-gray-600 text-sm">"하나님께 드리는 예배는 우리 일상의 중심입니다"</p>
+                        </div>
+                        <div class="bg-accent rounded-lg p-6 shadow-lg text-center transform transition duration-300 hover:scale-105">
+                            <img src="https://placehold.co/180x180/6366F1/FFFFFF?text=O" alt="이찬양" class="rounded-full mx-auto mb-4 border-4 border-primary">
+                            <p class="text-default font-bold text-lg mb-1">이찬양</p>
+                            <p class="text-primary font-medium mb-3">키보드 & 보컬</p>
+                            <p class="text-gray-600 text-sm">"음악은 우리의 감정을 표현하는 하나님의 선물입니다"</p>
+                        </div>
+                        <div class="bg-accent rounded-lg p-6 shadow-lg text-center transform transition duration-300 hover:scale-105">
+                            <img src="https://placehold.co/180x180/6366F1/FFFFFF?text=L" alt="박기타" class="rounded-full mx-auto mb-4 border-4 border-primary">
+                            <p class="text-default font-bold text-lg mb-1">박기타</p>
+                            <p class="text-primary font-medium mb-3">기타 & 작곡</p>
+                            <p class="text-gray-600 text-sm">"하나님의 영광을 위한 음악을 만들고 연주합니다"</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                        <div class="bg-accent rounded-lg p-6 shadow-lg text-center transform transition duration-300 hover:scale-105">
+                            <img src="https://placehold.co/180x180/6366F1/FFFFFF?text=S" alt="최베이스" class="rounded-full mx-auto mb-4 border-4 border-primary">
+                            <p class="text-default font-bold text-lg mb-1">최베이스</p>
+                            <p class="text-primary font-medium mb-3">베이스</p>
+                            <p class="text-gray-600 text-sm">"단단한 기초로 팀을 받쳐주는 역할을 합니다"</p>
+                        </div>
+                        <div class="bg-accent rounded-lg p-6 shadow-lg text-center transform transition duration-300 hover:scale-105">
+                            <img src="https://placehold.co/180x180/6366F1/FFFFFF?text=S" alt="정드럼" class="rounded-full mx-auto mb-4 border-4 border-primary">
+                            <p class="text-default font-bold text-lg mb-1">정드럼</p>
+                            <p class="text-primary font-medium mb-3">드럼</p>
+                            <p class="text-gray-600 text-sm">"리듬과 열정으로 예배의 박동을 만들어갑니다"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-default text-center mb-8">갤러리</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="overflow-hidden rounded-lg shadow-md bg-accent gallery-item-hover">
+                        <img src="https://placehold.co/600x400/6366F1/FFFFFF?text=Worship+Session" alt="워십 세션" class="w-full h-64 object-cover object-center transition duration-300 hover:scale-110">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">워십 콘서트</h3>
+                            <p class="text-sm text-gray-600">2024년 3월</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md bg-accent gallery-item-hover">
+                        <img src="https://placehold.co/600x400/6366F1/FFFFFF?text=Recording" alt="녹음 세션" class="w-full h-64 object-cover object-center transition duration-300 hover:scale-110">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">앨범 녹음</h3>
+                            <p class="text-sm text-gray-600">2024년 2월</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md bg-accent gallery-item-hover">
+                        <img src="https://placehold.co/600x400/6366F1/FFFFFF?text=Rehearsal" alt="연습 세션" class="w-full h-64 object-cover object-center transition duration-300 hover:scale-110">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">팀 연습</h3>
+                            <p class="text-sm text-gray-600">매주 목요일</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md bg-accent gallery-item-hover">
+                        <img src="https://placehold.co/600x400/6366F1/FFFFFF?text=Community" alt="공동체 모임" class="w-full h-64 object-cover object-center transition duration-300 hover:scale-110">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">팀 모임</h3>
+                            <p class="text-sm text-gray-600">2024년 1월</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md bg-accent gallery-item-hover">
+                        <img src="https://placehold.co/600x400/6366F1/FFFFFF?text=Outreach" alt="아웃리치" class="w-full h-64 object-cover object-center transition duration-300 hover:scale-110">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">지역 아웃리치</h3>
+                            <p class="text-sm text-gray-600">2023년 12월</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md bg-accent gallery-item-hover">
+                        <img src="https://placehold.co/600x400/6366F1/FFFFFF?text=Workshop" alt="워크샵" class="w-full h-64 object-cover object-center transition duration-300 hover:scale-110">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">찬양 워크샵</h3>
+                            <p class="text-sm text-gray-600">분기별 진행</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ministries" class="py-16 md:py-24 bg-secondary">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-default text-center mb-8">주요 사역 보고</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-accent rounded-lg shadow-md p-6 transform transition duration-300 hover:translate-y-[-5px] border-t-4 border-primary">
+                        <div class="mb-4 text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-default mb-4">월간 정기 예배</h3>
+                        <p class="text-gray-600 mb-4">
+                            holssi 워십팀은 매월 정기 예배를 통해 하나님과의 교제를 깊게 하고, 공동체와 함께 은혜를 나누는
+                            시간을 갖습니다.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>시간: 매월 셋째 주 금요일 오후 7:30</li>
+                            <li>장소: 믿음교회 본당</li>
+                            <li>특징: 찬양, 말씀, 중보기도, 간증</li>
+                        </ul>
+                        <a href="#contact" class="text-primary hover:text-primary-dark font-medium inline-flex items-center">
+                            참여 문의하기
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="bg-accent rounded-lg shadow-md p-6 transform transition duration-300 hover:translate-y-[-5px] border-t-4 border-primary">
+                        <div class="mb-4 text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-default mb-4">특별 집회</h3>
+                        <p class="text-gray-600 mb-4">
+                            holssi 워십팀은 특별한 주제와 메시지를 담은 집회를 통해 새로운 은혜를 경험하고, 영적으로 성장하는 
+                            시간을 제공합니다.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>주제: "깊은 은혜, 넓은 사랑"</li>
+                            <li>강사: 김믿음 목사</li>
+                            <li>프로그램: 찬양, 말씀, 치유기도회</li>
+                        </ul>
+                        <a href="#contact" class="text-primary hover:text-primary-dark font-medium inline-flex items-center">
+                            일정 확인하기
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="bg-accent rounded-lg shadow-md p-6 transform transition duration-300 hover:translate-y-[-5px] border-t-4 border-primary">
+                        <div class="mb-4 text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-default mb-4">문화 사역</h3>
+                        <p class="text-gray-600 mb-4">
+                            음악, 영상, 디자인 등 다양한 문화 콘텐츠를 통해 복음을 전하고 사람들과 소통합니다. 하나님의 아름다움을 
+                            예술로 표현합니다.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>콘서트: "찬양의 밤" (분기별)</li>
+                            <li>영상: 월간 예배 프로모션 영상</li>
+                            <li>음반: "Here and There" 앨범 제작</li>
+                        </ul>
+                        <a href="#gallery" class="text-primary hover:text-primary-dark font-medium inline-flex items-center">
+                            갤러리 보기
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 md:py-24 bg-secondary">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-default text-center mb-8">문의하기</h2>
+                <div class="bg-accent rounded-lg shadow-md p-8">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="inquiry_title" class="block text-gray-700 text-sm font-bold mb-2">제목 <span class="text-red-500">*</span></label>
+                            <input type="text" id="inquiry_title" name="inquiry_title" placeholder="문의 제목을 입력해주세요." class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">이메일 <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="이메일 주소를 입력해주세요." class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">연락처</label>
+                            <input type="tel" id="phone" name="phone" placeholder="연락처를 입력해주세요." class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">문의 내용 <span class="text-red-500">*</span></label>
+                            <textarea id="message" name="message" placeholder="문의 내용을 입력해주세요." class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent h-32 resize-y" required></textarea>
+                        </div>
+                        <!-- EmailJS용 hidden 필드, 서비스 추적용 -->
+                        <input type="hidden" name="contact_source" value="holssi-worship.github.io" />
+                        
+                        <button id="form-submit-btn" type="submit" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-full transition duration-300 w-full btn-glow">문의하기</button>
+                        <p id="form-status" class="mt-4 text-center"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">holssi worship</h3>
+                    <p class="text-gray-400 mb-4">
+                        "Here and There" - 우리가 모여 예배하는 이곳에서도, 우리가 흩어져 나아갈 그곳에서도 하나님을 예배합니다.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">바로가기</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-primary transition duration-300">홈</a></li>
+                        <li><a href="#about" class="hover:text-primary transition duration-300">소개</a></li>
+                        <li><a href="#gallery" class="hover:text-primary transition duration-300">갤러리</a></li>
+                        <li><a href="#ministries" class="hover:text-primary transition duration-300">사역</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition duration-300">문의</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">연락처</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2 text-primary">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                            holssi.worship@example.com
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2 text-primary">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                            </svg>
+                            010-1234-5678
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2 text-primary">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                            서울시 OO구 OO로 123
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-400">
+                <p>&copy; 2024 holssi worship. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
