@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LeQdwIrAAAAAPNIaonYv_HP6sTnZgWLWJZdtsQD"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 =======
     <style>
         body {
@@ -319,6 +319,11 @@
                         </div>
                         <!-- EmailJS용 hidden 필드, 서비스 추적용 -->
                         <input type="hidden" name="contact_source" value="holssiworship.github.io" />
+                        
+                        <!-- reCAPTCHA v2 체크박스 -->
+                        <div class="flex justify-center my-4">
+                            <div class="g-recaptcha" data-sitekey="6LcbfAIrAAAAACcU37epJX6NSSfNTpH8V6dD-5yA"></div>
+                        </div>
                         
 =======
                         

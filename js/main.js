@@ -124,23 +124,30 @@ if (contactForm) {
         formStatus.textContent = '문의를 전송 중입니다...';
         formStatus.className = 'mt-4 text-primary';
         
-        // reCAPTCHA v3 실행
-        grecaptcha.ready(function() {
-            grecaptcha.execute('6LeQdwIrAAAAAPNIaonYv_HP6sTnZgWLWJZdtsQD', {action: 'contact_submit'})
-            .then(function(token) {
-                // reCAPTCHA 토큰을 포함한 템플릿 파라미터
-                const templateParams = {
-                    subject: formData.inquiry_title,
-                    email: formData.email,
-                    phone: formData.phone,
-                    message: formData.message,
-                    contact_source: formData.contact_source,
-                    'g-recaptcha-response': token  // reCAPTCHA 토큰 추가
-                };
-                
-                // EmailJS로 이메일 전송
-                return emailjs.send('service_2jixwit', 'template_krrg5f9', templateParams);
-            })
+        // reCAPTCHA v2 검증
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (!recaptchaResponse) {
+            formStatus.textContent = '로봇이 아님을 인증해주세요.';
+            formStatus.className = 'mt-4 text-red-500';
+            
+            // 버튼 상태 복원
+            formSubmitButton.disabled = false;
+            formSubmitButton.innerHTML = '문의하기';
+            return;
+        }
+        
+        // reCAPTCHA 토큰을 포함한 템플릿 파라미터
+        const templateParams = {
+            subject: formData.inquiry_title,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+            contact_source: formData.contact_source,
+            'g-recaptcha-response': recaptchaResponse  // reCAPTCHA 토큰 추가
+        };
+        
+        // EmailJS로 이메일 전송
+        emailjs.send('service_2jixwit', 'template_krrg5f9', templateParams)
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
                 formStatus.textContent = '문의가 성공적으로 전송되었습니다. 빠른 시일 내에 답변 드리겠습니다.';
@@ -148,6 +155,9 @@ if (contactForm) {
                 
                 // 폼 초기화
                 contactForm.reset();
+                
+                // reCAPTCHA 초기화
+                grecaptcha.reset();
                 
                 // 버튼 상태 복원
                 formSubmitButton.disabled = false;
@@ -162,6 +172,9 @@ if (contactForm) {
                 console.error('이메일 전송 실패:', error);
                 formStatus.textContent = '이메일 전송 중 오류가 발생했습니다. 다시 시도해주세요.';
                 formStatus.className = 'mt-4 text-red-500';
+                
+                // reCAPTCHA 초기화
+                grecaptcha.reset();
                 
                 // 버튼 상태 복원
                 formSubmitButton.disabled = false;
