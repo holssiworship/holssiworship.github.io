@@ -95,6 +95,7 @@ if (contactForm) {
         // 폼 데이터 수집
         const formData = {
             inquiry_title: document.getElementById('inquiry_title').value,
+            name: document.getElementById('name').value || "이름 미입력", // 이름이 없을 경우 기본값 설정
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value || "연락처 없음", // 연락처가 없을 경우 기본값 설정
             message: document.getElementById('message').value,
@@ -116,6 +117,14 @@ if (contactForm) {
             return;
         }
         
+        // reCAPTCHA v2 검증
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (!recaptchaResponse) {
+            formStatus.textContent = '로봇이 아님을 인증해주세요.';
+            formStatus.className = 'mt-4 text-red-500';
+            return;
+        }
+        
         // 버튼 비활성화 및 로딩 표시
         formSubmitButton.disabled = true;
         formSubmitButton.innerHTML = '<span class="animate-pulse">전송 중...</span>';
@@ -124,27 +133,18 @@ if (contactForm) {
         formStatus.textContent = '문의를 전송 중입니다...';
         formStatus.className = 'mt-4 text-primary';
         
-        // reCAPTCHA v2 검증
-        const recaptchaResponse = grecaptcha.getResponse();
-        if (!recaptchaResponse) {
-            formStatus.textContent = '로봇이 아님을 인증해주세요.';
-            formStatus.className = 'mt-4 text-red-500';
-            
-            // 버튼 상태 복원
-            formSubmitButton.disabled = false;
-            formSubmitButton.innerHTML = '문의하기';
-            return;
-        }
-        
         // reCAPTCHA 토큰을 포함한 템플릿 파라미터
         const templateParams = {
-            subject: formData.inquiry_title,
+            title: formData.inquiry_title,
+            name: formData.name,
             email: formData.email,
             phone: formData.phone,
             message: formData.message,
             contact_source: formData.contact_source,
             'g-recaptcha-response': recaptchaResponse  // reCAPTCHA 토큰 추가
         };
+        
+        console.log('Sending email with parameters:', templateParams);
         
         // EmailJS로 이메일 전송
         emailjs.send('service_2jixwit', 'template_krrg5f9', templateParams)
@@ -180,7 +180,6 @@ if (contactForm) {
                 formSubmitButton.disabled = false;
                 formSubmitButton.innerHTML = '문의하기';
             });
-        });
     });
 }
 

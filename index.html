@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-=======
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -304,6 +303,11 @@
                             <label for="inquiry_title" class="block text-gray-700 text-sm font-bold mb-2">제목 <span class="text-red-500">*</span></label>
                             <input type="text" id="inquiry_title" name="inquiry_title" placeholder="문의 제목을 입력해주세요." class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
                         </div>
+                        
+                        <div>
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">이름</label>
+                            <input type="text" id="name" name="name" placeholder="이름을 입력해주세요." class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
 
                         <div>
                             <label for="email" class="block text-gray-700 text-sm font-bold mb-2">이메일 <span class="text-red-500">*</span></label>
@@ -324,10 +328,6 @@
                         <div class="flex justify-center my-4">
                             <div class="g-recaptcha" data-sitekey="6LcbfAIrAAAAACcU37epJX6NSSfNTpH8V6dD-5yA"></div>
                         </div>
-                        
-=======
-                        
-                        <!-- EmailJS에서는 CAPTCHA를 제거하고 자체적으로 구현 -->
                         
                         <button id="form-submit-btn" type="submit" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-full transition duration-300 w-full btn-glow">문의하기</button>
                         <p id="form-status" class="mt-4 text-center"></p>
