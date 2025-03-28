@@ -8,7 +8,8 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeQdwIrAAAAAPNIaonYv_HP6sTnZgWLWJZdtsQD"></script>
+=======
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -319,10 +320,9 @@
                         <!-- EmailJS용 hidden 필드, 서비스 추적용 -->
                         <input type="hidden" name="contact_source" value="holssiworship.github.io" />
                         
-                        <!-- reCAPTCHA -->
-                        <div class="flex justify-center my-4">
-                            <div class="g-recaptcha" data-sitekey="6LeQdwIrAAAAAPNIaonYv_HP6sTnZgWLWJZdtsQD"></div>
-                        </div>
+=======
+                        
+                        <!-- EmailJS에서는 CAPTCHA를 제거하고 자체적으로 구현 -->
                         
                         <button id="form-submit-btn" type="submit" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-full transition duration-300 w-full btn-glow">문의하기</button>
                         <p id="form-status" class="mt-4 text-center"></p>
