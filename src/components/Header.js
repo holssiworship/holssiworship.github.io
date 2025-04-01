@@ -1,26 +1,38 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Header = ({ activeSection, navItems, scrollToSection, mobileMenuOpen, toggleMobileMenu }) => {
+const Header = ({ mobileMenuOpen, toggleMobileMenu }) => {
+  // Navigation items
+  const navItems = [
+    { path: '/', label: '홈' },
+    { path: '/about', label: '소개' },
+    { path: '/gallery', label: '갤러리' },
+    { path: '/ministries', label: '사역' },
+    { path: '/contact', label: '문의' }
+  ];
+
   return (
     <>
       {/* Header */}
       <header className="bg-white shadow-md py-4 sticky top-0 z-40">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-gray-800">holssi worship</h1>
+          <NavLink to="/" className="text-xl font-bold text-gray-800">holssi worship</NavLink>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
               {navItems.map(item => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className={`${
-                      activeSection === item.id ? 'text-indigo-500 font-bold' : 'text-gray-800'
-                    } hover:text-indigo-500 transition duration-300`}
+                <li key={item.path}>
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) => 
+                      isActive 
+                        ? 'text-indigo-500 font-bold hover:text-indigo-700 transition duration-300' 
+                        : 'text-gray-800 hover:text-indigo-500 transition duration-300'
+                    }
                   >
                     {item.label}
-                  </button>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -85,13 +97,16 @@ const Header = ({ activeSection, navItems, scrollToSection, mobileMenuOpen, togg
           <nav className="block">
             <ul className="space-y-4">
               {navItems.map(item => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className="block text-lg text-gray-800 hover:text-indigo-500 transition duration-300"
+                <li key={item.path}>
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) => 
+                      `block text-lg ${isActive ? 'text-indigo-500 font-bold' : 'text-gray-800'} hover:text-indigo-500 transition duration-300`
+                    }
+                    onClick={toggleMobileMenu}
                   >
                     {item.label}
-                  </button>
+                  </NavLink>
                 </li>
               ))}
             </ul>

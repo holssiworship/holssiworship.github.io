@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const HomeSection = ({ scrollToSection }) => {
+const HomeSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section
       id="home"
@@ -21,13 +24,13 @@ const HomeSection = ({ scrollToSection }) => {
         </p>
         <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
           <button
-            onClick={() => scrollToSection('about')}
+            onClick={() => navigate('/about')}
             className="bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 text-lg"
           >
             팀 소개
           </button>
           <button
-            onClick={() => scrollToSection('ministries')}
+            onClick={() => navigate('/ministries')}
             className="bg-transparent hover:bg-white/20 text-white border-2 border-white font-semibold py-3 px-8 rounded-full transition duration-300 text-lg"
           >
             사역 소개

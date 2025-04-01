@@ -1,6 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Footer = ({ navItems, scrollToSection }) => {
+const Footer = () => {
+  // Footer navigation items
+  const navItems = [
+    { path: '/', label: '홈' },
+    { path: '/about', label: '소개' },
+    { path: '/gallery', label: '갤러리' },
+    { path: '/ministries', label: '사역' },
+    { path: '/contact', label: '문의' }
+  ];
+
   return (
     <footer className="bg-gray-800 py-12">
       <div className="container mx-auto px-4">
@@ -16,13 +26,13 @@ const Footer = ({ navItems, scrollToSection }) => {
             <h3 className="text-lg font-bold text-white mb-4">바로가기</h3>
             <ul className="space-y-2 text-gray-400">
               {navItems.map(item => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
                     className="hover:text-indigo-500 transition duration-300"
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>

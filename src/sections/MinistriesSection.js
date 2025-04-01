@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const MinistriesSection = ({ scrollToSection }) => {
+const MinistriesSection = () => {
+  const navigate = useNavigate();
+  
   const ministries = [
     {
       title: '월간 정기 예배',
@@ -15,7 +18,8 @@ const MinistriesSection = ({ scrollToSection }) => {
         '장소: 믿음교회 본당',
         '특징: 찬양, 말씀, 중보기도, 간증'
       ],
-      link: '참여 문의하기'
+      link: '참여 문의하기',
+      path: '/contact'
     },
     {
       title: '특별 집회',
@@ -30,7 +34,8 @@ const MinistriesSection = ({ scrollToSection }) => {
         '강사: 김믿음 목사',
         '프로그램: 찬양, 말씀, 치유기도회'
       ],
-      link: '일정 확인하기'
+      link: '일정 확인하기',
+      path: '/contact'
     },
     {
       title: '문화 사역',
@@ -45,7 +50,8 @@ const MinistriesSection = ({ scrollToSection }) => {
         '영상: 월간 예배 프로모션 영상',
         '음반: "Here and There" 앨범 제작'
       ],
-      link: '갤러리 보기'
+      link: '갤러리 보기',
+      path: '/gallery'
     }
   ];
 
@@ -58,7 +64,7 @@ const MinistriesSection = ({ scrollToSection }) => {
             <MinistryCard 
               key={index} 
               ministry={ministry} 
-              scrollToSection={scrollToSection} 
+              navigate={navigate} 
             />
           ))}
         </div>
@@ -67,7 +73,7 @@ const MinistriesSection = ({ scrollToSection }) => {
   );
 };
 
-const MinistryCard = ({ ministry, scrollToSection }) => {
+const MinistryCard = ({ ministry, navigate }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 transform transition duration-300 hover:translate-y-[-5px] border-t-4 border-indigo-500">
       <div className="mb-4 text-indigo-500">
@@ -83,7 +89,7 @@ const MinistryCard = ({ ministry, scrollToSection }) => {
         ))}
       </ul>
       <button
-        onClick={() => scrollToSection('contact')}
+        onClick={() => navigate(ministry.path)}
         className="text-indigo-500 hover:text-indigo-700 font-medium inline-flex items-center"
       >
         {ministry.link}
